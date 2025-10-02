@@ -1,15 +1,30 @@
 # Employee Org Analysis
 
-This project is a console-based Java application to analyze an organization’s structure from a CSV file.
+A Java SE console application to analyze an organization’s structure from a CSV file.
+
+## Features
+- Identify **underpaid managers** (earn < 20% above average of direct reports).
+- Identify **overpaid managers** (earn > 50% above average of direct reports).
+- Identify **employees with too long reporting line** (> 4 managers between them and CEO).
 
 ## Requirements
-- Use only **Java SE** (any version).
-- Use **Maven** for build.
-- Use **JUnit** for tests.
-- No frameworks, no GUI — only console output.
+- Java 17+
+- Maven 3.6+
+- JUnit 5 (for tests)
 
-## Goals
-The program should:
-1. Identify managers who are **underpaid** (earn less than 20% above avg salary of their direct reports).
-2. Identify managers who are **overpaid** (earn more than 50% above avg salary of their direct reports).
-3. Identify employees whose reporting line to the CEO is **too long** (more than 4 managers in between).
+## Example Output
+Using the provided sample file (sample-data/employees.csv), the program prints:
+
+=== Underpaid Managers ===
+- Martin Chekov (124) underpaid by 15000.00
+
+=== Overpaid Managers ===
+- (none)
+
+=== Employees with Too Long Reporting Line ===
+- (none)
+
+
+## Build
+```bash
+mvn clean package
